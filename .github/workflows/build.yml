@@ -29,7 +29,7 @@ jobs:
         echo DATETIME=$(echo $(date '+%Y%m%d-%H%M%S')) >> $GITHUB_ENV 
     - uses: actions/download-artifact@master
       with:
-        name: binary
+        name: menureload
     - name: zip artifact
       run: zip -r ${{ env.REPOSITORY_NAME }}_${{ env.DATETIME }}.zip build/*.wps
     - name: Create Release
