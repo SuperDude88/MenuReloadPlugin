@@ -5,8 +5,8 @@
 #include <wups.h>
 
 WUPS_PLUGIN_NAME("MenuReload");
-WUPS_PLUGIN_DESCRIPTION("Reload the Wii U Menu with L + R + X, full restart with L + R + B.");
-WUPS_PLUGIN_VERSION("v1.0a");
+WUPS_PLUGIN_DESCRIPTION("Reload the Wii U Menu with L3 + R3 + ZL, full restart with L3 + R3 + L + R.");
+WUPS_PLUGIN_VERSION("v1.1a");
 WUPS_PLUGIN_AUTHOR("SuperDude88");
 WUPS_PLUGIN_LICENSE("MIT");
 
@@ -22,10 +22,10 @@ DECL_FUNCTION(int32_t, VPADRead, VPADChan chan, VPADStatus *buffer, uint32_t buf
             const uint32_t& hold = buffer[0].hold;
 
             if (const uint64_t& id = OSGetTitleID(); id == MENU_TID_JPN || id == MENU_TID_USA || id == MENU_TID_EUR) {
-                if (hold == (VPAD_BUTTON_L | VPAD_BUTTON_R | VPAD_BUTTON_X)) { //reload with L + R + X
+                if (hold == (VPAD_BUTTON_STICK_L | VPAD_BUTTON_STICK_R | VPAD_BUTTON_ZL)) { //reload with L3 + R3 + ZL
                     _SYSLaunchTitleWithStdArgsInNoSplash(id, nullptr);
                 }
-                else if (hold == (VPAD_BUTTON_L | VPAD_BUTTON_R | VPAD_BUTTON_B)) { //restart with L + R + B
+                else if (hold == (VPAD_BUTTON_STICK_L | VPAD_BUTTON_STICK_R | VPAD_BUTTON_L | VPAD_BUTTON_R)) { //restart with L3 + R3 + L + R
                     OSForceFullRelaunch();
 	                SYSLaunchMenu();
                 }

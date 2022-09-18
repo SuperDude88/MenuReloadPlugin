@@ -10,9 +10,9 @@ A tiny plugin to quickly reload the Wii U menu.
 
 ## Usage
 
-Hold `L + R + X` to reload the menu and refresh any new or changed apps.
+Hold `L3 + R3 + ZL` (press the sticks) to reload the menu and refresh any new or changed apps.
 
-Hold `L + R + B` to do a full restart. Takes longer than a reload, but also refreshes plugins.
+Hold `L3 + R3 + L + R` to do a full restart. Takes longer than a reload, but also refreshes plugins.
 
 ## Building
 
