@@ -31,7 +31,7 @@ jobs:
       with:
         name: menureload
     - name: zip artifact
-      run: zip -r ${{ env.REPOSITORY_NAME }}_${{ env.DATETIME }}.zip build/*.wps
+      run: zip -r ${{ env.REPOSITORY_NAME }}_${{ env.DATETIME }}.zip *.wps
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
