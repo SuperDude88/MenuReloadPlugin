@@ -4,8 +4,8 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 include("./PluginSystem.cmake" REQUIRED)
 
-project(reloadplugin CXX)
+project(menureload CXX)
 add_compile_options(-Ofast -Wall)
 
-add_executable(reloadplugin main.cpp)
-wups_create_plugin(reloadplugin)
+add_executable(menureload main.cpp)
+wups_create_plugin(menureload)
