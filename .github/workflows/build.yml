@@ -17,7 +17,7 @@ jobs:
     - uses: actions/upload-artifact@master
       with:
        name: menureload
-       path: "*.wps"
+       path: "build/*.wps"
   deploy-binary:
     needs: build-binary
     runs-on: ubuntu-22.04
@@ -31,7 +31,7 @@ jobs:
       with:
         name: binary
     - name: zip artifact
-      run: zip -r ${{ env.REPOSITORY_NAME }}_${{ env.DATETIME }}.zip *.wps
+      run: zip -r ${{ env.REPOSITORY_NAME }}_${{ env.DATETIME }}.zip build/*.wps
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
